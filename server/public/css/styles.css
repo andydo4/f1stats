@@ -1,7 +1,7 @@
 :root {
-    --background-color: #1d1d1d;
+    --background-color: #15151e;
     --primary-color: #f5f5f5;
-    --secondary-color: #333;
+    --secondary-color: #1d1d1d;
     --tertiary-color: #f4f4f4;
     --success-color: #28a745;
     --danger-color: #dc3545;
@@ -15,6 +15,54 @@
     --link-hover-bg-color: #0056b3;
     --border-radius: 0.25rem;
     --transition: all 0.5s ease;
+
+    /* Constructor Colors (Modular) */
+    --mclaren: #FF8000;
+    --ferrari: #E8002D;
+    --red_bull: #3671C6;
+    --mercedes: #27F4D2;
+    --aston_martin: #229971;
+    --alpine: #FF87BC;
+    --haas: #B6BABD;
+    --rb: #6692FF;
+    --williams: #64C4FF;
+    --sauber: #2BDE73;
+
+    --alphatauri: #20394C; 
+    --alfa: #9B0000;
+    --racing_point: #F596C8;
+    --renault: #FFF500;
+    --toro_rosso: #00144A;
+    --force_india: #FF80C7;
+    --manor: #0077FF;
+    --lotus_f1: #B6995B;
+    --marussia: #B2B2B2;
+    --caterham: #005030;
+    --hrt: #A6904F;
+    --lotus_racing: #004225;
+    --virgin: #ED140F;
+    --brawn: #B8FD6E;
+    --toyota: #EB0A1E;
+    --bmw_sauber: #638CB3;
+    --honda: #C8C8CA;
+    --super_aguri: #E31836;
+    --spyker: #FF7F00;
+    --mf1: #FF0000;
+    --spyker_mf1: #FF7F00;
+    --bar: #FFFFFF;
+    --jordan: #F1BD00;
+    --minardi: #FFFFFF;
+    --jaguar: #004225;
+    --arrows: #EA883F;
+    --benetton: #0060A8;
+    --prost: #0000FF;
+    --stewart: #FFFFFF;
+    --tyrrell: #153480;
+    --ligier: #0145B2;
+    --footwork: #FF0000;
+    --forti: #F0D734;
+    --pacific: #2769AA;
+    --simtek: #351D75;
 }
 
 html, body {
