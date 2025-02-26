@@ -13,10 +13,12 @@
     --link-hover-color: #0056b3;
     --link-hover-text-color: #fff;
     --link-hover-bg-color: #0056b3;
-    --border-radius: 0.25rem;
+    --border-radius: 0.5rem;
     --transition: all 0.5s ease;
 
     /* Constructor Colors (Modular) */
+    --f1: #E8002D;
+
     --mclaren: #FF8000;
     --ferrari: #E8002D;
     --red_bull: #3671C6;
@@ -65,9 +67,337 @@
     --simtek: #351D75;
 }
 
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+  /* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+}
+
+  /* Scrollbar thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+    background: var(--f1);
+    border-radius: 6px;
+}
+
+  /* Scrollbar thumb hover state */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
 html, body {
     font-family: 'Inter', sans-serif;
     color: var(--primary-color);
     background-color: var(--background-color);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
+/* ! Nav Bar ! */
+
+nav {
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav h1 {
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+nav div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+nav select {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px 0 var(--secondary-color);
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.navBtn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: solid var(--f1);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px 0 var(--f1);
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.navBtn:hover {
+    background-color: var(--f1);
+    color: var(--primary-color);
+}
+
+.navBtn.active {
+    background-color: var(--f1);
+    color: var(--primary-color);
+    box-shadow: 0 0 10px 0 var(--f1);
+}
+
+/* ! Bar Graph */
+.graph-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.graph-code {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+}
+
+.graph-bar {
+    height: 40px;
+    transition: width 0.8s ease;
+    margin-right: 10px;
+    border-radius: var(--border-radius);
+}
+
+.graph-points {
+    font-size: 1rem;
+}
+
+/* ! Standings */
+
+.standings-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.standings-table {
+    flex: 1; // the table takes up about half the space
+}
+
+.standings-graph {
+    flex: 1; // the graph takes up about half the space
+}
+
+@media screen and (max-width: 768px) {
+    .standings-container {
+        flex-direction: column;
+    }
+
+    .standings-graph {
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
+
+/* ! Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+table th {
+    background-color: var(--f1);
+    color: var(--primary-color);
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    font-weight: bold;
+}
+
+table td {
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .standings-container {
+        flex-direction: column;
+    }
+
+    .standings.graph {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    nav h1 {
+        font-size: 2.5rem;
+    }
+
+    nav select {
+        font-size: 1rem;
+    }
+
+    .navBtn {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+
+    .graph-code {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .graph-bar {
+        height: 30px;
+    }
+
+    .graph-points {
+        font-size: 0.8rem;
+    }
+
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    /* Hide table headers (if you want to use a card-style layout) */
+    thead tr {
+        display: none;
+    }
+    
+    /* Style each row as a card */
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid var(--secondary-color);
+        padding: 10px;
+    }
+    
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    /* Labels for each cell (optional) */
+    td::before {
+        position: absolute;
+        left: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+}
+
+/* ! Race Buttons */
+
+.race-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px 0 var(--secondary-color);
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.race-btn:hover {
+    background-color: var(--primary-color);
+    border: solid var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.race-btn.active {
+    background-color: var(--primary-color);
+    border: solid var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 0 10px 0 var(--primary-color);
+}
+
+// Race Info
+
+.race-info h1 {
+    font-size: 1rem;
+}
+
+.race-info h3 {
+    font-size: 2rem;
+}
+
+.race-info h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* ! Footer */
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    color: #6a6a6a;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter'
+}
+
+footer a {
+    color: var(--link-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+footer a:hover {
+    color: var(--link-hover-color);
+}
+
+footer img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
 }
