@@ -1,0 +1,25 @@
+<nav>
+    <h1>F1 Tracker</h1>
+    <div>
+        <label for="yearSelect">Year:</label>
+        <select id="yearSelect">
+            <% for(let year = 2025; year >= 1950; year--) { %>
+                <option value="<%= year %>"><%= year %></option>
+            <% } %>
+        </select>
+    </div>
+    <div>
+        <button id="driverBtn">
+            Drivers Standings
+        </button>
+        <button id="constructorBtn">
+            Constructors Standings
+        </button>
+        <button id="racesBtn">
+            Races
+        </button>
+        <button id="sprintsBtn">
+            Sprints
+        </button>
+    </div>
+</nav>
