@@ -104,12 +104,11 @@ html, body {
 /* ! Nav Bar ! */
 
 nav {
-    top: 0px;
-    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     padding: 10px 0;
-    z-index: 1000;
 }
 
 nav h1 {
@@ -198,9 +197,8 @@ nav select {
 .standings-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .standings-table {
@@ -255,21 +253,24 @@ table tr:nth-child(even) {
         flex-direction: column;
     }
 
-    .standings.graph {
-        order: -1;
-        margin-bottom: 20px;
+    .standings-table table {
+        font-size: 0.9rem;
+    }
+
+    .standings-graph .graph-bar {
+        height: 30px;
+    }
+
+    nav {
+        flex-direction: column;
     }
 
     nav h1 {
         font-size: 2.5rem;
     }
 
-    nav select {
-        font-size: 1rem;
-    }
-
-    .navBtn {
-        font-size: 0.8rem;
+    nav select, .navBtn {
+        font-size: 0.9rem;
         padding: 8px 16px;
     }
 
@@ -316,6 +317,12 @@ table tr:nth-child(even) {
         left: 10px;
         white-space: nowrap;
         font-weight: bold;
+    }
+
+    .race-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        margin: 5px 3px;
     }
 }
 
