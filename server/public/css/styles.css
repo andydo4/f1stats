@@ -183,6 +183,7 @@
     font-style: normal;
 }
 
+
 .intro {
     position: fixed;
     top: 0;
@@ -494,6 +495,10 @@ table tr:nth-child(even) {
 
     .standings-graph .graph-bar {
         height: 30px;
+    }
+
+    .car-svg {
+        transform: none !important;
     }
 
     nav {
