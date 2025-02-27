@@ -226,6 +226,7 @@
 
 .car-svg {
     position: absolute;
+    opacity: 0; // removed car 
     top: -14px;
     left: 0;
     width: 40px;
