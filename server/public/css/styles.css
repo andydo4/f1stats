@@ -314,6 +314,7 @@ html, body {
 
 /* ! Nav Bar ! */
 
+
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -473,6 +474,8 @@ table tr:nth-child(even) {
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
+
+
     .intro-title {
         font-size: 3rem;
     }
@@ -483,15 +486,16 @@ table tr:nth-child(even) {
 
     .standings-container {
         flex-direction: column;
-        gap: 20px;
+        justify-content: center;
+        text-align: center;
     }
 
     .standings-table table {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .standings-table, .standings-graph {
-        width: 90%;
+        width: 100%;
     }
 
     .standings-graph .graph-bar {
