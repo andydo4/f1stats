@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hide the intro after the loading bar animation completes
     setTimeout(() => {
         intro.classList.add('hidden');
-    }, 2000); // Adjust the duration to match the loading bar animation duration
+    }, 1000); // Adjust the duration to match the loading bar animation duration
 });

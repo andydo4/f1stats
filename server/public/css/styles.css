@@ -205,7 +205,7 @@
     width: 0;
     height: 100%;
     background-color: var(--primary-color);
-    animation: load 2s linear forwards;
+    animation: load 1s linear forwards;
     position: relative;
 }
 
