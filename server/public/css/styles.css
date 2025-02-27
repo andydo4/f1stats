@@ -65,6 +65,73 @@
     --forti: #F0D734;
     --pacific: #2769AA;
     --simtek: #351D75;
+
+    /* 1994 - 1970 teams */
+    --larousse: #FF0000;
+    --team_lotus: #013A12;
+    --lola: #FEDC02;
+    --fondmetal: #D92318;
+    --dallara: #A72704;
+    --brabham: #030D30;
+    --march: #293A96;
+    --moda: #000000;
+    --ags: #02238E;
+    --coloni: #FBF049;
+    --lambo: #1258FF;
+    --leyton: #23E5EE;
+    --eurobrun: #ECEDE7;
+    --life: #DC0D03;
+    --onyx: #374695;
+    --osella: #3F6ECA;
+    --rial: #DBC62D;
+    --zakspeed: #B7190E;
+    --ram: #0B5234;
+    --spirit: #C11F1A;
+    --toleman: #0E1D4F;
+    --ats: #FEEF00;
+    --theodore: #9D0A13;
+    --ensign: #FA405B;
+    --fittipaldi: #EBC701;
+    --shadow: #161920;
+    --brabham-alfa_romeo: #E10602;
+    --brabham-ford: #E7E9EC;
+    --kauhsen: #0A0A0A;
+    --mezario: #FFD12F;
+    --rebaque: #F4C14D;
+    --wolf: #B9A086;
+    --hesketh: #FFFFFF;
+    --martini: #CD3137;
+    --surtees: #FFFFFF;
+    --apollon: #FDBC2B;
+    --boro: #AE1C28;
+    --brm: #100E61;
+    --kojima: #0F1176;
+    --lec: #172333;
+    --mcguire: #323544;
+    --penske: #D0102D;
+    --maki: #2988BE;
+    --parnelli: #D02B2D;
+    --hill: #DF2E38;
+    --lyncar: #3A7E6E;
+    --shadow-ford: #161920;
+    --shadow-matra: #161920;
+    --amon: #82B4DC;
+    --iso_marlboro: #F04326;
+    --token: #246E0A;
+    --trojan: #A60918;
+    --tecno: #FA2324;
+    --connew: #E8CA42;
+    --matra: #50A5D8;
+    --politoys: #2B3044;
+    --bellasi: #FC4301;
+    --lotus-ford: #264A30;
+    --lotus-pw: #EFC76D;
+    --march-alfa_romeo: #AA0C14;
+    --march-ford: #2D3796;
+    --mclaren-alfa_romeo: #A72317;
+    --mclaren-ford: #FD0100;
+    --tomaso: #C52000;
+
 }
 
 /* Width of the scrollbar */
@@ -88,6 +155,134 @@
     background: #555;
 }
 
+@font-face {
+    font-family: 'GreaterTheory';
+    src: url('/fonts/GreaterTheory.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Milker';
+    src: url('/fonts/Milker.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1s ease-out;
+}
+
+.intro-title {
+    font-family: 'Race Sport';
+    font-size: 5rem;
+    color: var(--primary-color);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.loading-bar-container {
+    width: 20%;
+    height: 10px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-top: 20px;
+    position: relative;
+}
+
+.loading-bar {
+    width: 0;
+    height: 100%;
+    background-color: var(--primary-color);
+    animation: load 2s linear forwards;
+    position: relative;
+}
+
+.car-svg {
+    position: absolute;
+    top: -14px;
+    left: 0;
+    width: 40px;
+    height: auto;
+    animation: drive 0s linear forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes load {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes drive {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% - 40px); /* Adjust this value based on the width of the car */
+    }
+}
+
+/*  Race Buttons Animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.race-btn.animate-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Table drop down animation */
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table-animate-in {
+    animation: dropDown 0.5s ease-out forwards;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
 
 html, body {
     font-family: 'Inter', sans-serif;
@@ -112,24 +307,25 @@ nav {
 }
 
 nav h1 {
+    font-family: 'Race Sport';
     font-weight: 800;
     font-size: 4rem;
 }
 
 nav div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 15px;
 }
 
-nav select {
+nav select, .mobileSelect {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border: solid var(--secondary-color);
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px 0 var(--secondary-color);
-    font-family: 'Inter';
-    font-weight: 600;
+    font-family: 'GreaterTheory';
     font-size: 1.5rem;
     cursor: pointer;
     transition: var(--transition);
@@ -143,9 +339,8 @@ nav select {
     box-shadow: 0 0 10px 0 var(--f1);
     padding: 10px 20px;
     margin: 5px;
+    font-family: 'GreaterTheory';
     cursor: pointer;
-    font-family: 'Inter';
-    font-weight: 600;
     font-size: 1rem;
     transition: var(--transition);
 }
@@ -177,7 +372,7 @@ nav select {
     align-items: center;
     justify-content: center;
     margin-right: 10px;
-    font-weight: bold;
+    font-family: 'GreaterTheory';
     border-radius: var(--border-radius);
 }
 
@@ -189,6 +384,7 @@ nav select {
 }
 
 .graph-points {
+    font-weight: 900;
     font-size: 1rem;
 }
 
@@ -209,18 +405,25 @@ nav select {
     flex: 1; // the graph takes up about half the space
 }
 
-@media screen and (max-width: 768px) {
-    .standings-container {
-        flex-direction: column;
-    }
+/* ! Table */
 
-    .standings-graph {
-        order: -1;
-        margin-bottom: 20px;
-    }
+.race-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* ! Table */
+.race-info-row span {
+    flex: 1;
+    text-align: center;
+}
+
+.race-title {
+    text-align: left;
+}
+.race-date {
+    text-align: right;
+}
 
 table {
     width: 100%;
@@ -235,11 +438,12 @@ table th {
     color: var(--primary-color);
     padding: 10px;
     border: 1px solid var(--secondary-color);
-    font-weight: bold;
+    font-family: 'GreaterTheory';
 }
 
 table td {
     padding: 10px;
+    font-weight: 800;
     border: 1px solid var(--secondary-color);
 }
 
@@ -247,14 +451,31 @@ table tr:nth-child(even) {
     background-color: var(--secondary-color);
 }
 
+.mobileSelect {
+    display: none;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
+    .intro-title {
+        font-size: 3rem;
+    }
+
+    .loading-bar-container {
+        width: 50%;
+    }
+
     .standings-container {
         flex-direction: column;
+        gap: 20px;
     }
 
     .standings-table table {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+    }
+
+    .standings-table, .standings-graph {
+        width: 90%;
     }
 
     .standings-graph .graph-bar {
@@ -263,68 +484,101 @@ table tr:nth-child(even) {
 
     nav {
         flex-direction: column;
+        padding: 0;
     }
 
     nav h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        margin-bottom: 2px;
+    }
+
+    nav div {
+        margin-bottom: 5px;
     }
 
     nav select, .navBtn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
+        font-size: 0.8rem;
+        padding: 2px 8px;
+        margin: 2px 0;
+    }
+
+    .mobileSelect {
+        font-size: 1rem;
+        width: 100%;
+        display: block;
+        text-align: center;
+        text-align-last: center;
     }
 
     .graph-code {
-        width: 30px;
-        height: 30px;
-        font-size: 0.8rem;
+        width: 25px;
+        height: 25px;
+        font-size: 0.7rem;
     }
 
     .graph-bar {
-        height: 30px;
+        height: 15px;
     }
 
     .graph-points {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
-
-    table, thead, tbody, th, td, tr {
-        display: block;
+    .navBtn, .race-btn {
+        margin: 5px;
+        flex: 1 1 auto;
+        max-width: 45%;
     }
-    
-    /* Hide table headers (if you want to use a card-style layout) */
-    thead tr {
+
+    #raceButtonsContainer {
         display: none;
     }
     
-    /* Style each row as a card */
-    tr {
-        margin-bottom: 15px;
-        border: 1px solid var(--secondary-color);
-        padding: 10px;
-    }
-    
-    td {
-        border: none;
-        position: relative;
-        padding-left: 50%;
-    }
-    
-    /* Labels for each cell (optional) */
-    td::before {
-        position: absolute;
-        left: 10px;
-        white-space: nowrap;
-        font-weight: bold;
+    #raceSelectContainer {
+        display: block;
     }
 
-    .race-btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-        margin: 5px 3px;
+    #driversContent tbody, #driversContent thead, #constructorsContent tbody, #constructorsContent thead {
+        font-size: 0.79rem;
+        padding: 0.4rem 0.1rem;
+    }
+
+    #driversGraph, #constructorsGraph {
+        padding-left: 10px;
+    }
+
+    table {
+        font-size: 0.7rem;
+    }
+
+    table th, table td {
+        padding: 0.4rem 0.1rem;
+    }
+
+    #raceResults table tr:not(.info-row) th:last-child,
+    #raceResults table tr:not(.info-row) td:last-child {
+        display: none;
+    }
+
+    footer p {
+        font-size: 0.7rem;
+    }
+
+    footer img {
+        height: 5px;
+        width: 5px;
     }
 }
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
 
 /* ! Race Buttons */
 
@@ -337,8 +591,7 @@ table tr:nth-child(even) {
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    font-family: 'Inter';
-    font-weight: 400;
+    font-family: 'GreaterTheory';
     font-size: 1rem;
     transition: var(--transition);
 }
@@ -356,6 +609,11 @@ table tr:nth-child(even) {
     box-shadow: 0 0 10px 0 var(--primary-color);
 }
 
+#raceList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 // Race Info
 
 .race-info h1 {

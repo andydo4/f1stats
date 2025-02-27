@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1Tracker</title>
+    <title>F1Stats</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <div id="intro" class="intro">
+        <h1 class="intro-title"><span style="color: var(--f1)">F1</span>Stats</h1>
+        <div class="loading-bar-container">
+            <div class="loading-bar">
+                <img src="/images/car.svg" alt="Car" class="car-svg">
+            </div>
+        </div>
+    </div>
+
     <%- include('partials/navbar') %>
 
     <div id="content">
@@ -24,5 +33,6 @@
     
 
     <script src="/js/main.js"></script>
+    <script src="/js/intro.js"></script>
 </body>
 </html>

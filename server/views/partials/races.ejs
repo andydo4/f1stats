@@ -1,25 +1,31 @@
-<div id="racesContent">
-    <div id="raceList"></div>
+<div id="racesContent" style="display: none;">
+    <!-- Container for race buttons (shown on larger screens) -->
+    <div id="raceButtonsContainer">
+        <div id="raceList"></div>
+    </div>
+    
+    <!-- Container for a select menu (shown on smaller screens) -->
+    <div id="raceSelectContainer">
+        <select id="raceSelect"></select>
+    </div>
 
     <div id="raceResults" class="race-info" style="display: none;">
-            <h3 id="raceTitle"></h3>
-            <h4 id="raceLocation"></h4>
-            <h4 id="raceDate"></h4>
-        <table>
-            <thead>
-                <tr>
-                    <th>Position</th>
-                    <th>Driver</th>
-                    <th>Constructor</th>
-                    <th>Points</th>
-                    <th>Time</th>
-                    <th>Fastest Lap</th>
-                    <th>Average Speed (kph)</th>
-                </tr>
-            </thead>
-            <tbody id="raceResultsTable">
-                <!-- Data will be inserted here -->
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th id="th-position">Position</th>
+                        <th id="th-driver">Driver</th>
+                        <th id="th-constructor">Constructor</th>
+                        <th id="th-points">Points</th>
+                        <th id="th-time">Time</th>
+                        <th id="th-fastestlap">Fastest Lap</th>
+                    </tr>
+                </thead>
+                <tbody id="raceResultsTable">
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

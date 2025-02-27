@@ -1,17 +1,24 @@
-<div id="sprintsContent">
-    <div id="sprintList"></div>
+<div id="sprintsContent" style="display: none;">
+    <!-- Container for sprints button on larger screens -->
+    <div id="raceButtonsContainer">
+        <div id="sprintList"></div>
+    </div>
+
+    <div id="raceSelectContainer">
+        <select id="sprintSelect"></select>
+    </div>
 
     <div id="sprintResults" style="display: none;">
         <h3 id="sprintTitle"></h3>
         <table>
             <thead>
                 <tr>
-                    <th>Position</th>
-                    <th>Driver</th>
-                    <th>Constructor</th>
-                    <th>Points</th>
-                    <th>Time</th>
-                    <th>Fastest Lap</th>
+                    <th id="th-position">Position</th>
+                    <th id="th-driver">Driver</th>
+                    <th id="th-constructor">Constructor</th>
+                    <th id="th-points">Points</th>
+                    <th id="th-time">Time</th>
+                    <th id="th-fastestlap">Fastest Lap</th>
                 </tr>
             </thead>
             <tbody id="sprintResultsTable">

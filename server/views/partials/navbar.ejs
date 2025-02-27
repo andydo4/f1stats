@@ -1,27 +1,29 @@
 <nav>
-    <h1 style="padding-right: 20px"><span style="color: var(--f1);">F1</span>Tracker</h1>
-    <div class="yearSelect" style="margin-top: 20px">
-        <select id="yearSelect">
-            <% for(let year = 2024; year >= 1950; year--) { %>
-                <option value="<%= year %>"><%= year %></option>
-            <% } %>
-        </select>
-    </div>
-    <div style="margin-top: 20px">
-        <button class="navBtn" id="driverBtn">
-            Drivers Standings
-        </button>
-        <button class="navBtn" id="constructorBtn">
-            Constructors Standings
-        </button>
-        <button class="navBtn" id="racesBtn">
-            Races
-        </button>
-        <button class="navBtn" id="sprintsBtn">
-            Sprints
-        </button>
-        <button class="navBtn" id="qualifyingBtn">
-            Qualifying
-        </button>
+    <h1 style="padding-right: 20px"><span style="color: var(--f1);">F1</span>Stats</h1>
+    <div class="navContent">
+        <div class="yearSelect" style="margin-top: 20px">
+            <select id="yearSelect">
+                <% for(let year = 2024; year >= 1950; year--) { %>
+                    <option value="<%= year %>"><%= year %></option>
+                <% } %>
+            </select>
+        </div>
+        <div style="margin-top: 20px">
+            <button class="navBtn" id="driverBtn">
+                Drivers Standings
+            </button>
+            <button class="navBtn" id="constructorBtn">
+                Constructors Standings
+            </button>
+            <button class="navBtn" id="racesBtn">
+                Races
+            </button>
+            <button class="navBtn" id="sprintsBtn">
+                Sprints
+            </button>
+            <button class="navBtn" id="qualifyingBtn">
+                Qualifying
+            </button>
+        </div>
     </div>
 </nav>
