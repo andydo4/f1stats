@@ -558,7 +558,7 @@ table tr:nth-child(even) {
     }
 
     #driversContent tbody, #driversContent thead, #constructorsContent tbody, #constructorsContent thead {
-        font-size: 0.79rem;
+        font-size: 0.78rem;
         padding: 0.4rem 0.1rem;
     }
 
