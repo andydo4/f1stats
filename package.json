@@ -6,8 +6,6 @@
     "scripts": {
         "start": "node server/app.js",
         "dev": "nodemon server/app.js"
-        "build": "esbuild server/public/js/index.js --bundle --minify --outfile=server/public/js/bundle.js",
-        "watch": "esbuild server/public/js/index.js --bundle --minify --outfile=server/public/js/bundle.js --watch"
     },
     "dependencies": {
         "@vercel/analytics": "^1.5.0",
