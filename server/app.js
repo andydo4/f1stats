@@ -1,12 +1,15 @@
-// filepath: /C:/Users/andyd/Documents/vscode/f1tracker/server/app.js
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 const app = express()
+const compression = require('compression')
 
 // CORS middleware
 app.use(cors())
+
+// Compression
+app.use(compression())
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs')
